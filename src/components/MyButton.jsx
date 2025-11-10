@@ -1,10 +1,11 @@
-const MyButton = () => {
-  const btnText = `Click Here to See the Creatures!`;
+const MyButton = ({ veil, setVeil }) => {
   return (
     <>
-      <button onClick={() => }>
-        {btnText}
+      <div className="veil"style={{ display: veil ? 'block' : 'none' }}>
+      <button onClick={() => setVeil(false)}>
+        Click Here to See the Creatures!
         </button>
+        </div>
     </>
   );
 };

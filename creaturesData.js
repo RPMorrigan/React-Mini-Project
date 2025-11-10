@@ -24,3 +24,5 @@ const creaturesData = [
       'Giant creatures of the deep, adapted to extreme pressures and emitting blinding light.',
   },
 ];
+
+export default creaturesData;

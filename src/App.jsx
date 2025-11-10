@@ -1,17 +1,17 @@
 import React from 'react';
-import { useState } from 'react';
 import './index.css';
-import './creaturesData.js';
+import { useState } from 'react';
+import creaturesData from '../creaturesData.js';
 import MyButton from './components/MyButton.jsx';
 
 function App() {
-  const [cover, setCover] = useState(true);
-
+  const [veil, setVeil] = useState(true);
   return (
     <>
-      <MyButton />
-      <div className="card-wrapper">
-        <CardGen />
+      <h1>Creature Card Generator</h1>
+      <MyButton veil={veil} setVeil={setVeil} />
+      <div className="card-wrapper" style={{ display: veil ? 'none' : 'block' }}>
+        {creaturesData.map((item) => <CardGen key={item.id} item={item} />)}
       </div>
     </>
   );
