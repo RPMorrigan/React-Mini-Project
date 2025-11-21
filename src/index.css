@@ -103,7 +103,7 @@ button:focus-visible {
   width: 38rem;
   height: fit-content;
   margin: 0.5rem auto;
-  padding: 1rem;
+  padding: 1.5rem;
   background: white;
   box-shadow: 0 0 1rem gainsboro;
   border-radius: 0.5rem;
