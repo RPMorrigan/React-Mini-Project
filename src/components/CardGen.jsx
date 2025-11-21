@@ -1,14 +1,15 @@
 const CardGen = ({ item }) => {
   const { id, name, habitat, abilities, description } = item;
   return (
-    <>
-      <h2 className={"card " + name}>{name}</h2>
-      <hr />
-      <p>{ habitat }</p>
-      <p>{ abilities }</p>
+    <div className={`card ${id}`}>
+      <h3>{name}</h3>
+      <p><span className="bold">Habitat: </span>{ habitat }</p>
       <p>{description}</p>
-      <sub>ID: {id}</sub>
-    </>
+      <p className="green">Abilities: </p>
+      <ul>
+        {abilities.map((ability) => <li>{ability}</li>)}
+      </ul>
+    </div>
   );
 };
 

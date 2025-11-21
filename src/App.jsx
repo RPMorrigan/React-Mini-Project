@@ -2,18 +2,21 @@ import React from 'react';
 import './index.css';
 import { useState } from 'react';
 import creaturesData from '../creaturesData.js';
-import MyButton from './components/MyButton.jsx';
+import CardGen from './components/CardGen.jsx'
 
 function App() {
-  const [veil, setVeil] = useState(true);
+  const [veilClick, setVeil] = useState(true);
   return (
-    <>
-      <h1>Creature Card Generator</h1>
-      <MyButton veil={veil} setVeil={setVeil} />
-      <div className="card-wrapper" style={{ display: veil ? 'none' : 'block' }}>
-        {creaturesData.map((item) => <CardGen key={item.id} item={item} />)}
+    <div className="container">
+      <div className="veil" style={{display: veilClick ? 'inherit' : 'none' }}>
+        <button onClick={()=> setVeil(false)} >CLick here to see the creatures!</button>
       </div>
-    </>
+        <div className="wrapper">
+        <h1>Creatures of Eldoria</h1>
+        <h2>Explore Creatures</h2>
+          {creaturesData.map((item) => <CardGen key={item.id} item={item} />)}
+        </div>
+    </div>
   );
 }
 
